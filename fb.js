@@ -1,6 +1,6 @@
-function fizzbuzz(){
+function fizzbuzz(userInput){
     var arr = [];
-    for(var x=1; x<100; x++){
+    for(var x=1; x<userInput; x++){
         if(x%15 == 0){
             arr.push("fizzbuzz")
         }
@@ -28,6 +28,14 @@ function printThis(array1){
 
 $(document).ready(function(){
 //$("body").
-    var anu = fizzbuzz();
-    printThis(anu);
+    var userInput = parseInt(prompt("State your number:"));
+    console.log(userInput);
+    if (isNaN(userInput) == false){
+        console.log("what?")
+        var anu = fizzbuzz(userInput);
+        printThis(anu);
+    } else{
+        alert("Please enter valid number")
+        location.reload();
+    }
 })
